@@ -134,5 +134,5 @@ Below is a summary of all failing tests, including the expected and actual resul
 
 ---
 
-## Root Cause
-Most failures are due to insufficient floating-point precision (float64), which cannot represent or maintain the required number of decimal places for these operations.
+## Failures Root Cause
+The root cause of these failures is the use of 32-bit floating-point numbers (float32) for mathematical operations. The float32 type can only accurately represent about 6 to 9 significant decimal digits, which is insufficient for calculations requiring higher precision. As a result, many test cases that expect more than 6-9 digits of accuracy fail due to rounding errors and loss of precision. Even float64 (double precision) can represent about 15-17 significant digits, but the current implementation does not use it, leading to even greater inaccuracies. To resolve these issues and pass the tests, the application should use at least float64 (double precision) for all calculations, or consider arbitrary-precision arithmetic (such as Python's `decimal.Decimal` or similar libraries in other languages) if even higher precision is required.
