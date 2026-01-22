@@ -39,6 +39,9 @@ This project provides a comprehensive test suite for the LoanPro calculator CLI,
    - Results are saved as `test_results_<timestamp>.txt`.
    - Failed tests are logged in `failed_tests_<timestamp>.txt`.
 
+## Test Cases List
+For a detailed list of all test cases used in this suite, see the [calculator_test_cases.md](calculator_test_cases.md) file in this repository.
+
 ## Interpreting Results
 - The script prints a summary of passed, failed, and error tests.
 - See the generated results files for detailed output.
